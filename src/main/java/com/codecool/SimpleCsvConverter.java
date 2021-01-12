@@ -20,6 +20,7 @@ public class SimpleCsvConverter {
 
     public void convert(Path filePath, FileType outputType) throws IOException {
         System.out.println("I convert CSV to output format " + outputType.toString().toLowerCase());
-        fileReader.readData(filePath);
+        OutputFormatter outputFormatter = OutputFormatterFactory.createByFormat(outputType);
+        outputFormatter.printToConsole(fileReader.readData(filePath));
     }
 }
