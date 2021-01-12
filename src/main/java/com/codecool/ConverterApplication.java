@@ -1,9 +1,10 @@
 package com.codecool;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class ConverterApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Path path = Path.of("default_path");
         FileType outputType = FileType.UNSUPPORTED;
         if (args.length > 0) {
