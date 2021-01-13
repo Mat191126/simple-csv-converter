@@ -3,32 +3,22 @@ package com.codecool;
 import com.jakewharton.fliptables.FlipTable;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TableOutputFormatter implements OutputFormatter{
+
     @Override
     public void printToConsole(BufferedReader data) {
-        List<String[]> rows = new ArrayList<>();
-        String line = "";
-        while (true) {
-            try {
-                if ((line = data.readLine()) == null) break;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            String[] dataLine = line.split(",");
-            rows.add(dataLine);
-        }
+        int HEADER_INDEX = 0;
+        List<String[]> rows = getRows(data);
 
-        String[] header = new String[rows.get(0).length];
+        String[] header = new String[rows.get(HEADER_INDEX).length];
         String[][] rowsForFlipTable = new String[rows.size() - 1][];
 
         for (int i = 0; i < rows.size(); i++) {
-            String[] dataForFlipTables = new String[rows.get(0).length];
-            for (int j = 0; j < rows.get(0).length; j++) {
-                if (i == 0) {
+            String[] dataForFlipTables = new String[rows.get(HEADER_INDEX).length];
+            for (int j = 0; j < rows.get(HEADER_INDEX).length; j++) {
+                if (i == HEADER_INDEX) {
                     header[j] = rows.get(i)[j];
                 } else {
                     dataForFlipTables[j] = rows.get(i)[j];
