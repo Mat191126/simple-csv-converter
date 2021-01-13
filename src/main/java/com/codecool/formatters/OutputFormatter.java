@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.formatters;
 
 import java.io.BufferedReader;
 import java.io.IOException;

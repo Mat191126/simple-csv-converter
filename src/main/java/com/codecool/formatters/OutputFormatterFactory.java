@@ -1,4 +1,6 @@
-package com.codecool;
+package com.codecool.formatters;
+
+import com.codecool.FileType;
 
 public class OutputFormatterFactory {
 

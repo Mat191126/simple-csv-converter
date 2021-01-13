@@ -1,5 +1,8 @@
 package com.codecool;
 
+import com.codecool.formatters.OutputFormatter;
+import com.codecool.formatters.OutputFormatterFactory;
+
 import java.io.IOException;
 import java.nio.file.Path;
 

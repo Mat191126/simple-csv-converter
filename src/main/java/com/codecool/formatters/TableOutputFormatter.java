@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.formatters;
 
 import com.jakewharton.fliptables.FlipTable;
 
