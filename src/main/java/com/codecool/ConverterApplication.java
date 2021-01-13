@@ -28,7 +28,8 @@ public class ConverterApplication {
             System.out.println("No input file defined");
             return;
         }
-        SimpleCsvConverter simpleCsvConverter = new SimpleCsvConverter();
+        FileReader fileReader = new FileReader();
+        SimpleCsvConverter simpleCsvConverter = new SimpleCsvConverter(fileReader);
         simpleCsvConverter.convert(path, outputType);
     }
 }
