@@ -1,6 +1,6 @@
 package com.codecool;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -30,7 +30,7 @@ public class ConverterApplication {
             System.out.println("No input file defined");
             return;
         }
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         SimpleCsvConverter simpleCsvConverter = (SimpleCsvConverter) context.getBean("simpleCsvConverter");
         simpleCsvConverter.convert(path, outputType);
     }

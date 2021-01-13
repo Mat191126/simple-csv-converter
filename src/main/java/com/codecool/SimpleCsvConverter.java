@@ -2,10 +2,13 @@ package com.codecool;
 
 import com.codecool.formatters.OutputFormatter;
 import com.codecool.formatters.OutputFormatterFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.Path;
 
+@Service
 public class SimpleCsvConverter {
     FileReader fileReader;
 
@@ -17,6 +20,7 @@ public class SimpleCsvConverter {
         this.fileReader = fileReader;
     }
 
+    @Autowired
     public void setFileReader(FileReader fileReader) {
         this.fileReader = fileReader;
     }
